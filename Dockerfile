@@ -4,9 +4,8 @@ FROM alpine:3.8
 RUN apk upgrade && \
     apk add --no-cache \
     git jq make ca-certificates \
-    py-pip python && \
-    pip install --upgrade pip && \
-    pip install awscli==<<AWS_CLI_VERSION>> && \
-    apk del --purge py-pip
+    python3 && \
+    pip3 install --upgrade pip && \
+    pip3 install awscli==<<AWS_CLI_VERSION>>
 
 CMD ["/bin/sh"]
